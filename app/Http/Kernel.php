@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http;
 
+use App\Http\Middleware\ForceJson;
 use App\Http\Middleware\TrimStrings;
 use App\Http\Middleware\TrustProxies;
 use Fruitcake\Cors\HandleCors;
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Auth\Middleware\AuthenticateWithBasicAuth;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
@@ -27,6 +29,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 class Kernel extends HttpKernel
 {
     protected $middleware = [
+        ForceJson::class,
         TrustProxies::class,
         HandleCors::class,
         ValidatePostSize::class,
@@ -50,6 +53,7 @@ class Kernel extends HttpKernel
     ];
 
     protected $routeMiddleware = [
+        "auth" => Authenticate::class,
         "auth.basic" => AuthenticateWithBasicAuth::class,
         "cache.headers" => SetCacheHeaders::class,
         "can" => Authorize::class,
