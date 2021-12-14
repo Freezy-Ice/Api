@@ -15,8 +15,8 @@ class StoreResource extends JsonResource
             "name" => $this->name,
             "city" => $this->city,
             "address" => $this->address,
-            "description" => $this->description,           
-            "accepted" => $this->accepted
+            "description" => $this->description,
+            "accepted" => $this->accepted,
         ];
     }
 }

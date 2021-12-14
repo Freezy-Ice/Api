@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Resources\PaginatedCollection;
-use App\Http\Resources\IceCreamShop\IceCreamShopCollection;
-use App\Http\Requests\IceCreamShop\StoreRequest;
-use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\IceCreamShop\StoreResource;
-use App\Models\IceCreamShop;
-use App\Http\Resources\IceCreamShop\IceCreamShopResource;
 use App\Http\Requests\IceCreamShop\IceCreamShopRequest;
+use App\Http\Requests\IceCreamShop\StoreRequest;
+use App\Http\Resources\IceCreamShop\IceCreamShopCollection;
+use App\Http\Resources\IceCreamShop\IceCreamShopResource;
+use App\Http\Resources\IceCreamShop\StoreResource;
+use App\Http\Resources\PaginatedCollection;
+use App\Models\IceCreamShop;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
 
 class IceCreamShopController extends Controller
@@ -43,12 +43,12 @@ class IceCreamShopController extends Controller
     {
         $iceCreamShop->update([
             $request->getUpdateData(),
-            'lat' => $request->coords['lat'],
-            'lng' => $request->coords['lng']
+            "lat" => $request->coords["lat"],
+            "lng" => $request->coords["lng"],
         ]);
 
-        $iceCreamShop->openingHours()->delete();        
-        $iceCreamShop->openingHours()->createMany($request->getOpeningHours());        
+        $iceCreamShop->openingHours()->delete();
+        $iceCreamShop->openingHours()->createMany($request->getOpeningHours());
 
         return new IceCreamShopResource($iceCreamShop);
     }
@@ -57,6 +57,8 @@ class IceCreamShopController extends Controller
     {
         $iceCreamShop->delete();
 
-        return response(["message" => "Usunięto lodziarnę"]);
+        return response([
+            "message" => "Usunięto lodziarnę",
+        ]);
     }
 }

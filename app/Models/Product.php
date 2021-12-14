@@ -14,7 +14,7 @@ class Product extends Model
     use HasFactory;
 
     protected $guarded = [];
-    
+
     public function iceCreamShop(): BelongsTo
     {
         return $this->belongsTo(IceCreamShop::class);

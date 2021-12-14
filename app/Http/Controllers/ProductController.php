@@ -35,13 +35,15 @@ class ProductController extends Controller
         $product->update($request->getData());
         $product->flavors()->sync($request->flavors);
 
-        return new ProductResource($product); 
+        return new ProductResource($product);
     }
 
     public function delete(IceCreamShop $iceCreamShop, Product $product): Response
     {
         $product->delete();
 
-        return response(["message" => "Usunięto produkt"]);
+        return response([
+            "message" => "Usunięto produkt",
+        ]);
     }
 }

@@ -10,14 +10,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class OpeningHour extends Model
 {
-    protected $table = "opening_hours";
-
     use HasFactory;
+    protected $table = "opening_hours";
 
     protected $guarded = [];
 
     protected $casts = [
-        'open' => 'boolean',
+        "open" => "boolean",
     ];
 
     public function iceCreamShop(): BelongsTo

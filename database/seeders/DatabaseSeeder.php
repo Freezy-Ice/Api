@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             ->count(10)
             ->hasIceCreamShops(1)
             ->create();
-            
+
         Category::factory()
             ->count(10)
             ->create();
@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()
             ->count(20)
             ->forRandomIceCreamShop()
-            ->has(Flavor::factory()->count(2))   
+            ->has(Flavor::factory()->count(2))
             ->create();
     }
 }

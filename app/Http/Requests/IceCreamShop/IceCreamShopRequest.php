@@ -21,7 +21,7 @@ class IceCreamShopRequest extends FormRequest
             "openingHours.*.day" => ["required"],
             "openingHours.*.from" => ["required"],
             "openingHours.*.to" => ["required"],
-            "openingHours.*.open" => ["required", "boolean"]
+            "openingHours.*.open" => ["required", "boolean"],
         ];
     }
 

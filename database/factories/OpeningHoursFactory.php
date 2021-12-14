@@ -12,9 +12,9 @@ class OpeningHoursFactory extends Factory
     {
         return [
             "day" => $this->faker->dayOfWeek(),
-            "from" => $this->faker->dateTimeBetween('8:00', '12:00')->format('H:i'),
-            "to" => $this->faker->dateTimeBetween('15:00', '16:00')->format('H:i'),
-            "open" => $this->faker->boolean()
+            "from" => $this->faker->dateTimeBetween("8:00", "12:00")->format("H:i"),
+            "to" => $this->faker->dateTimeBetween("15:00", "16:00")->format("H:i"),
+            "open" => $this->faker->boolean(),
         ];
     }
 }

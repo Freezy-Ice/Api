@@ -10,12 +10,12 @@ class IceCreamShopObserver
 {
     public function created(IceCreamShop $iceCreamShop): void
     {
-        $days = array('Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday','Friday', 'Saturday');
+        $days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
         foreach ($days as $day) {
             $iceCreamShop->openingHours()->create([
-                'day' => $day
+                "day" => $day,
             ]);
-        }        
+        }
     }
 }

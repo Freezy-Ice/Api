@@ -11,21 +11,20 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class IceCreamShop extends Model
 {
+    use HasFactory;
     protected $table = "ice_cream_shops";
 
-    use HasFactory;
-
     protected $fillable = [
-        'name',
-        'city',
-        'address',
-        'description',
-        'lat',
-        'lng'
+        "name",
+        "city",
+        "address",
+        "description",
+        "lat",
+        "lng",
     ];
 
     protected $casts = [
-        'accepted' => 'boolean',
+        "accepted" => "boolean",
     ];
 
     public function owner(): BelongsTo

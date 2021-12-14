@@ -14,7 +14,7 @@ class OpeningHoursResource extends JsonResource
             "day" => $this->day,
             "from" => $this->from,
             "to" => $this->to,
-            "open" => $this->open
+            "open" => $this->open,
         ];
     }
 }

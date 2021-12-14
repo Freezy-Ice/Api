@@ -16,7 +16,7 @@ class ProductRequest extends FormRequest
             "category_id" => ["required", "exists:categories,id"],
             "flavors.*.flavor_id" => ["required", "exists:flavors,id"],
             "kcal" => ["required", "integer"],
-            "price" => ["required", "integer"]
+            "price" => ["required", "integer"],
         ];
     }
 

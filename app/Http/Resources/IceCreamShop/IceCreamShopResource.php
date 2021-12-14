@@ -22,8 +22,8 @@ class IceCreamShopResource extends JsonResource
                 "lng" => $this->lng,
             ],
             "openingHours" => OpeningHoursResource::collection($this->openingHours),
-            "updatedAt" => $this->updated_at->format('Y-m-d H:i:s'),
-            "accepted" => $this->accepted
+            "updatedAt" => $this->updated_at->format("Y-m-d H:i:s"),
+            "accepted" => $this->accepted,
         ];
     }
 }
