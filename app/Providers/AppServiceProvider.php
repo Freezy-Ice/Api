@@ -18,9 +18,4 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(TelescopeServiceProvider::class);
         }
     }
-
-    public function boot(): void
-    {
-        IceCreamShop::observe(IceCreamShopObserver::class);
-    }
 }
