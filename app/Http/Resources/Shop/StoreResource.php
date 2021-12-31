@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Resources\IceCreamShop;
+namespace App\Http\Resources\Shop;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -16,7 +16,7 @@ class StoreResource extends JsonResource
             "city" => $this->city,
             "address" => $this->address,
             "description" => $this->description,
-            "accepted" => $this->accepted,
+            "accepted" => $this->accepted
         ];
     }
 }

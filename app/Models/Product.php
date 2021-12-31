@@ -9,15 +9,28 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+/**
+ * @property int $id
+ * @property int $shop_id
+ * @property string $name
+ * @property string $description
+ * @property int $category_id
+ * @property int $kcal
+ * @property int $price
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ */
 class Product extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function iceCreamShop(): BelongsTo
+    protected $touches = ['shop'];
+
+    public function shop(): BelongsTo
     {
-        return $this->belongsTo(IceCreamShop::class);
+        return $this->belongsTo(Shop::class);
     }
 
     public function category(): BelongsTo

@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()
             ->count(10)
-            ->hasIceCreamShops(1)
+            ->hasShops(1)
             ->create();
 
         Category::factory()
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         Product::factory()
             ->count(20)
-            ->forRandomIceCreamShop()
+            ->forRandomShop()
             ->has(Flavor::factory()->count(2))
             ->create();
     }

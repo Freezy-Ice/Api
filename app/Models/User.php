@@ -22,11 +22,7 @@ class User extends Authenticatable
     use HasFactory;
     use Notifiable;
 
-    protected $fillable = [
-        "name",
-        "email",
-        "password",
-    ];
+    protected $guarded = [];
 
     protected $hidden = [
         "password",
@@ -37,8 +33,8 @@ class User extends Authenticatable
         "email_verified_at" => "datetime",
     ];
 
-    public function iceCreamShops(): HasMany
+    public function shops(): HasMany
     {
-        return $this->hasMany(iceCreamShop::class);
+        return $this->hasMany(Shop::class);
     }
 }

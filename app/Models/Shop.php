@@ -8,20 +8,30 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
 
-class IceCreamShop extends Model
+/**
+ * @property int $id
+ * @property int $user_id
+ * @property string $name
+ * @property string $city
+ * @property string $address
+ * @property string $description
+ * @property float $lat
+ * @property float $lng
+ * @property boolean $accepted
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @property User $owner
+ * @property Collection $openingHours
+ * @property Collection $products
+ */
+class Shop extends Model
 {
     use HasFactory;
-    protected $table = "ice_cream_shops";
 
-    protected $fillable = [
-        "name",
-        "city",
-        "address",
-        "description",
-        "lat",
-        "lng",
-    ];
+    protected $guarded = [];
 
     protected $casts = [
         "accepted" => "boolean",

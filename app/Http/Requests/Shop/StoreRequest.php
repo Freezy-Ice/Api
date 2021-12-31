@@ -2,19 +2,25 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Requests\IceCreamShop;
+namespace App\Http\Requests\Shop;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property string $name
+ * @property string $city
+ * @property string $address
+ * @property string $description
+ */
 class StoreRequest extends FormRequest
 {
     public function rules(): array
     {
         return [
-            "name" => ["required"],
+            "name" => ["required", "min:3", "max:50"],
             "city" => ["required"],
-            "address" => ["required"],
-            "description" => ["required"],
+            "address" => ["required", "min:3", "max:50"],
+            "description" => ["required", "min:3", "max:500"]
         ];
     }
 
