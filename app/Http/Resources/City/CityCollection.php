@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Resources\Shop;
+namespace App\Http\Resources\City;
 
 use App\Http\Resources\PaginatedCollection;
 
-class ShopCollection extends PaginatedCollection
+class CityCollection extends PaginatedCollection
 {
     public function toArray($request): array
     {

@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Resources\Shop;
+namespace App\Http\Resources\Shop\Business;
 
+use App\Http\Resources\City\CityResource;
 use App\Http\Resources\OpeningHoursResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UpdateResource extends JsonResource
+class ShopResource extends JsonResource
 {
     public function toArray($request): array
     {
         return [
             "id" => $this->id,
             "name" => $this->name,
-            "city" => $this->city,
+            "city" => new CityResource($this->city),
             "address" => $this->address,
             "description" => $this->description,
             "coords" => [
@@ -22,7 +23,7 @@ class UpdateResource extends JsonResource
                 "lng" => $this->lng,
             ],
             "openingHours" => OpeningHoursResource::collection($this->openingHours),
-
+            "createdAt" => $this->updated_at->format("Y-m-d H:i:s"),
             "updatedAt" => $this->updated_at->format("Y-m-d H:i:s"),
             "accepted" => $this->accepted,
         ];

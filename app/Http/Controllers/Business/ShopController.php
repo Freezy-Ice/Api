@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Business;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Shop\StoreRequest;
 use App\Http\Requests\Shop\UpdateRequest;
 use App\Http\Resources\PaginatedCollection;
-use App\Http\Resources\Shop\ShopCollection;
-use App\Http\Resources\Shop\StoreResource;
-use App\Http\Resources\Shop\UpdateResource;
+use App\Http\Resources\Shop\Business\ShopCollection;
+use App\Http\Resources\Shop\Business\ShopResource;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -31,12 +31,12 @@ class ShopController extends Controller
             ->create($request->getStoreData())
             ->refresh();
 
-        return new StoreResource($shops);
+        return new ShopResource($shops);
     }
 
     public function show(Shop $shop): JsonResource
     {
-        return new UpdateResource($shop);
+        return new ShopResource($shop);
     }
 
     public function update(UpdateRequest $request, Shop $shop): JsonResource
@@ -46,10 +46,10 @@ class ShopController extends Controller
         $shop->openingHours()->delete();
         $shop->openingHours()->createMany($request->getOpeningHours());
 
-        return new UpdateResource($shop);
+        return new ShopResource($shop);
     }
 
-    public function delete(Shop $shop): Response
+    public function destroy(Shop $shop): Response
     {
         $shop->delete();
 

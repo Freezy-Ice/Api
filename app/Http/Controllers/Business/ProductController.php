@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Business;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Http\Resources\Product\ProductCollection;
 use App\Http\Resources\Product\ProductResource;
@@ -42,7 +43,7 @@ class ProductController extends Controller
         return new ProductResource($product);
     }
 
-    public function delete(Product $product): Response
+    public function destroy(Product $product): Response
     {
         $product->delete();
 
