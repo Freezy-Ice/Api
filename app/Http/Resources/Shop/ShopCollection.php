@@ -12,7 +12,7 @@ class ShopCollection extends PaginatedCollection
     {
         return [
             "data" => $this->collection,
-            "paginationData" => $this->paginationData()
+            "paginationData" => $this->paginationData(),
         ];
     }
 }

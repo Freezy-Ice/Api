@@ -6,7 +6,6 @@ namespace App\Http\Requests\Shop;
 
 use App\Enums\DayOfWeek;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Enum;
 
 /**
@@ -33,7 +32,7 @@ class UpdateRequest extends FormRequest
             "openingHours.*.day" => ["required", new Enum(DayOfWeek::class)],
             "openingHours.*.from" => ["required", "date_format:G:i"],
             "openingHours.*.to" => ["required", "date_format:G:i"],
-            "openingHours.*.open" => ["required", "boolean"]
+            "openingHours.*.open" => ["required", "boolean"],
         ];
     }
 

@@ -6,10 +6,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Shop\StoreRequest;
 use App\Http\Requests\Shop\UpdateRequest;
-use App\Http\Resources\Shop\ShopCollection;
-use App\Http\Resources\Shop\UpdateResource;
-use App\Http\Resources\Shop\StoreResource;
 use App\Http\Resources\PaginatedCollection;
+use App\Http\Resources\Shop\ShopCollection;
+use App\Http\Resources\Shop\StoreResource;
+use App\Http\Resources\Shop\UpdateResource;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

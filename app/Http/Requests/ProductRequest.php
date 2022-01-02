@@ -36,16 +36,16 @@ class ProductRequest extends FormRequest
             "description" => $this->get("description"),
             "category_id" => $this->get("category"),
             "kcal" => $this->get("kcal"),
-            "price" => $this->get("price")
+            "price" => $this->get("price"),
         ];
     }
 
     public function getFlavors(): array
     {
-        return array_map(function ($flavor){
-            return array(
-                'flavor_id' => $flavor['id']
-            );
+        return array_map(function ($flavor) {
+            return [
+                "flavor_id" => $flavor["id"],
+            ];
         }, $this->get("flavors"));
     }
 }

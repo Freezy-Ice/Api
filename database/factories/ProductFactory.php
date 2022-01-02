@@ -17,7 +17,7 @@ class ProductFactory extends Factory
             "description" => $this->faker->paragraph(),
             "category_id" => Category::query()->inRandomOrder()->first()->id,
             "kcal" => $this->faker->numberBetween(1, 1000),
-            "price" => $this->faker->numberBetween(100, 800)
+            "price" => $this->faker->numberBetween(100, 800),
         ];
     }
 
@@ -25,8 +25,8 @@ class ProductFactory extends Factory
     {
         return $this->state(
             fn() => [
-                "shop_id" => Shop::query()->inRandomOrder()->first()->id
-            ]
+                "shop_id" => Shop::query()->inRandomOrder()->first()->id,
+            ],
         );
     }
 }

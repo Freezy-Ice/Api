@@ -24,7 +24,7 @@ class UpdateResource extends JsonResource
             "openingHours" => OpeningHoursResource::collection($this->openingHours),
 
             "updatedAt" => $this->updated_at->format("Y-m-d H:i:s"),
-            "accepted" => $this->accepted
+            "accepted" => $this->accepted,
         ];
     }
 }

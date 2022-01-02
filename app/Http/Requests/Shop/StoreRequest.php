@@ -20,7 +20,7 @@ class StoreRequest extends FormRequest
             "name" => ["required", "min:3", "max:50"],
             "city" => ["required"],
             "address" => ["required", "min:3", "max:50"],
-            "description" => ["required", "min:3", "max:500"]
+            "description" => ["required", "min:3", "max:500"],
         ];
     }
 

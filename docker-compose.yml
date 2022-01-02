@@ -17,19 +17,14 @@ services:
   php:
     build:
       context: environment/php
-      dockerfile: Dockerfile
       args:
-        XDEBUG_HOST: ${XDEBUG_HOST}
-        XDEBUG_PORT: ${XDEBUG_PORT}
-        XDEBUG_INSTALL: ${XDEBUG_INSTALL}
-        XDEBUG_START_WITH_REQUEST: ${XDEBUG_START_WITH_REQUEST}
-        XDEBUG_MODE: ${XDEBUG_MODE}
-        XDEBUG_LOG_LEVEL: ${XDEBUG_LOG_LEVEL}
+          INSTALL_XDEBUG: ${DOCKER_INSTALL_XDEBUG:-false}
     container_name: freezy-php
     working_dir: /application
     user: ${CURRENT_UID}
     volumes:
       - .:/application
+      - ./environment/php/php.ini:/usr/local/etc/php/conf.d/php.ini
     networks:
       - freezy
     restart: unless-stopped
@@ -46,6 +41,8 @@ services:
       - ${DB_PORT}:3306
     networks:
       - freezy
+    volumes:
+        - freezy-mysql-data:/var/lib/mysql
     restart: unless-stopped
 
   mailhog:
@@ -63,5 +60,5 @@ networks:
     driver: bridge
 
 volumes:
-  data:
-    name: mysql-data
+    freezy-mysql-data:
+        name: freezy-mysql-data

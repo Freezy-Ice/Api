@@ -17,7 +17,7 @@ class ShopFactory extends Factory
             "description" => $this->faker->paragraph(),
             "lat" => $this->faker->latitude(51.19, 51.22),
             "lng" => $this->faker->longitude(16.14, 16.2),
-            "accepted" => $this->faker->boolean()
+            "accepted" => $this->faker->boolean(),
         ];
     }
 }
