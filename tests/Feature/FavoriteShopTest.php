@@ -17,7 +17,7 @@ class FavoriteShopTest extends TestCase
     use CreatesShops;
     use ManagesFavorites;
 
-    public function testAdminCanListFavoriteShops(): void
+    public function testUserCanListFavoriteShops(): void
     {
         $user = $this->createUser();
         $shop = $this->createShop();
@@ -40,7 +40,7 @@ class FavoriteShopTest extends TestCase
         $this->assertCount(0, $user->favoriteShops()->get());
 
         $this->actingAs($user)
-            ->put("/shops/{$shop->id}/like")
+            ->post("/shops/{$shop->id}/like")
             ->assertSuccessful();
 
         $this->assertCount(1, $user->favoriteShops()->get());

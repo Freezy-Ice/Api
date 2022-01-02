@@ -19,6 +19,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $password
  * @property Collection $shops
  * @property Collection $favoriteShops
+ * @property Collection $reviews
  */
 class User extends Authenticatable
 {
@@ -45,5 +46,10 @@ class User extends Authenticatable
     public function favoriteShops(): BelongsToMany
     {
         return $this->belongsToMany(Shop::class, "favorites");
+    }
+
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
     }
 }

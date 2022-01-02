@@ -27,6 +27,7 @@ use Illuminate\Support\Collection;
  * @property User $owner
  * @property Collection $openingHours
  * @property Collection $products
+ * @property Collection $reviews
  */
 class Shop extends Model
 {
@@ -51,6 +52,11 @@ class Shop extends Model
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);
+    }
+
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
     }
 
     public function accept(): void
