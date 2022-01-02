@@ -13,6 +13,7 @@ use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Business\ProductController;
 use App\Http\Controllers\Business\ShopController as BusinessShopController;
 use App\Http\Controllers\DictionaryController;
+use App\Http\Controllers\FavoriteShopController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/", fn(): array => [
@@ -22,14 +23,15 @@ Route::get("/", fn(): array => [
 Route::prefix("auth")->group(function (): void {
     Route::post("login", LoginController::class);
     Route::post("register", RegisterController::class);
-
-    Route::middleware("auth:sanctum")->group(function (): void {
-        Route::get("user", UserController::class);
-        Route::post("logout", LogoutController::class);
-    });
+    Route::post("logout", LogoutController::class)->middleware("auth:sanctum");
 });
 
 Route::middleware("auth:sanctum")->group(function (): void {
+    Route::prefix("me")->group(function (): void {
+        Route::get("/", UserController::class);
+        Route::get("/favorites", [FavoriteShopController::class, "index"]);
+    });
+
     Route::prefix("business")->group(function (): void {
         Route::resource("shops", BusinessShopController::class);
 
@@ -40,6 +42,9 @@ Route::middleware("auth:sanctum")->group(function (): void {
 
     Route::get("/shops/{shop}/products", [ProductController::class, "index"]);
     Route::get("/products/{product}", [ProductController::class, "show"]);
+
+    Route::put("shops/{shop}/like", [FavoriteShopController::class, "like"]);
+    Route::delete("shops/{shop}/like", [FavoriteShopController::class, "dislike"]);
 });
 
 Route::prefix("admin")->group(function (): void {

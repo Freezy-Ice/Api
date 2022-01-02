@@ -18,9 +18,11 @@ class ShopTest extends TestCase
     public function testAdminCanListUnacceptedShops(): void
     {
         $user = $this->createUser();
+
         $this->createShops(11, [
             "accepted" => false,
         ]);
+
         $this->createShops(12, [
             "accepted" => true,
         ]);
