@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -17,6 +18,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $name
  * @property string $email
  * @property string $password
+ * @property bool $company_account
  * @property Collection $shops
  * @property Collection $favoriteShops
  * @property Collection $reviews
@@ -35,7 +37,7 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
-        "email_verified_at" => "datetime",
+        "company_account" => "bool",
     ];
 
     public function shops(): HasMany
@@ -51,5 +53,10 @@ class User extends Authenticatable
     public function reviews(): HasMany
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function scopeCompanyAccounts(Builder $query): Builder
+    {
+        return $query->where("company_account", true);
     }
 }

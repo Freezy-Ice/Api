@@ -18,7 +18,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CitySeeder::class);
 
         User::factory()
-            ->count(50)
+            ->count(10)
+            ->companyAccount()
+            ->create();
+
+        User::factory()
+            ->count(40)
             ->create();
 
         Category::factory()
@@ -28,13 +33,13 @@ class DatabaseSeeder extends Seeder
         Shop::factory()
             ->count(10)
             ->forRandomCity()
-            ->forRandomUser()
+            ->forRandomCompanyUser()
             ->hasProducts(Product::factory()->count(10)->hasFlavors(2))
             ->create();
 
         Review::factory()
             ->count(20)
-            ->foRandomUser()
+            ->forRandomUser()
             ->foRandomShop()
             ->create();
     }
