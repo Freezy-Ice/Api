@@ -24,11 +24,11 @@ class ShopFactory extends Factory
         ];
     }
 
-    public function forRandomUser(): Factory
+    public function forRandomCompanyUser(): Factory
     {
         return $this->state(
             fn() => [
-                "user_id" => User::query()->inRandomOrder()->first()->id,
+                "user_id" => User::query()->companyAccounts()->inRandomOrder()->first()->id,
             ],
         );
     }

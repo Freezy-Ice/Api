@@ -20,10 +20,36 @@ class RegisterTest extends TestCase
             "email" => "test@example.com",
             "name" => "Test user",
             "password" => "secret123",
-            "password_confirmation" => "secret123",
+            "passwordConfirmation" => "secret123",
+            "companyAccount" => false,
         ]);
 
         $response->assertSuccessful();
+
+        $this->assertDatabaseHas("users", [
+            "email" => "test@example.com",
+            "name" => "Test user",
+            "company_account" => false,
+        ]);
+    }
+
+    public function testUserCanRegisterAsCompanyAccount(): void
+    {
+        $response = $this->post("auth/register", [
+            "email" => "test@example.com",
+            "name" => "Test user",
+            "password" => "secret123",
+            "passwordConfirmation" => "secret123",
+            "companyAccount" => true,
+        ]);
+
+        $response->assertSuccessful();
+
+        $this->assertDatabaseHas("users", [
+            "email" => "test@example.com",
+            "name" => "Test user",
+            "company_account" => true,
+        ]);
     }
 
     public function testUserCannotRegisterWithoutNameProperty(): void
@@ -31,7 +57,8 @@ class RegisterTest extends TestCase
         $response = $this->post("auth/register", [
             "email" => "test@example.com",
             "password" => "secret123",
-            "password_confirmation" => "secret123",
+            "passwordConfirmation" => "secret123",
+            "companyAccount" => false,
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -48,7 +75,8 @@ class RegisterTest extends TestCase
             "email" => $email,
             "name" => "Test user",
             "password" => "secret123",
-            "password_confirmation" => "secret123",
+            "passwordConfirmation" => "secret123",
+            "company_account" => false,
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -61,9 +89,10 @@ class RegisterTest extends TestCase
             "email" => "test@example.com",
             "name" => "Test user",
             "password" => "secret123",
+            "companyAccount" => false,
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
-        $response->assertJsonValidationErrors(["password", "password_confirmation"]);
+        $response->assertJsonValidationErrors(["password", "passwordConfirmation"]);
     }
 }

@@ -5,12 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Hash;
 
-/**
- * @property string $email
- * @property string $name
- * @property string $password
- */
 class RegisterRequest extends FormRequest
 {
     public function rules(): array
@@ -18,8 +14,19 @@ class RegisterRequest extends FormRequest
         return [
             "email" => ["required", "email", "unique:users,email"],
             "name" => ["required", "min:5"],
-            "password" => ["required", "confirmed"],
-            "password_confirmation" => ["required"],
+            "companyAccount" => ["required", "boolean"],
+            "password" => ["required", "same:passwordConfirmation"],
+            "passwordConfirmation" => ["required"],
+        ];
+    }
+
+    public function getData(): array
+    {
+        return [
+            "name" => $this->get("name"),
+            "email" => $this->get("email"),
+            "password" => Hash::make($this->get("password")),
+            "company_account" => $this->boolean("companyAccount"),
         ];
     }
 }
