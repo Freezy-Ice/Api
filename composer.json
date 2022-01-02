@@ -5,16 +5,16 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.65",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-      "ext-pdo": "*"
+        "ext-pdo": "*"
     },
     "require-dev": {
-        "blumilksoftware/codestyle": "^0.6.0",
+        "blumilksoftware/codestyle": "^0.8.0",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/telescope": "^4.6",

@@ -7,32 +7,34 @@ on:
     branches: [ "main", "develop" ]
 
 jobs:
-  check-test-lint:
-    runs-on: ubuntu-latest
-    name: Run tests and linters
+  build:
+    runs-on: ubuntu-20.04
+
     steps:
       - uses: actions/checkout@v2
 
       - name: Validate composer.json and composer.lock
         run: composer validate
 
-      - name: Run the Docker containers
-        run: docker-compose -f docker-compose.testing.yml up -d
-
-      - name: Cache composer dependencies
+      - name: Cache dependencies
         uses: actions/cache@v2
         with:
           path: vendor
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
+          key: ${{ runner.os }}-composer-dependencies-${{ hashFiles('composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-dependencies
 
-      - name: Install dependencies
-        run: docker-compose -f docker-compose.testing.yml run php composer install --prefer-dist --no-progress --no-suggest
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, intl
+          coverage: none
 
-      - name: Run code style checker
-        run: docker-compose -f docker-compose.testing.yml run php composer ecs
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-interaction --no-suggest
 
-      - name: Run tests
-        run: docker-compose -f docker-compose.testing.yml run php composer test
+      - name: Run linter
+        run: composer ecs
 
+      - name: Execute tests
+        run: php artisan test
