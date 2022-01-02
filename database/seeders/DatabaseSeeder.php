@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Shop;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -29,6 +30,12 @@ class DatabaseSeeder extends Seeder
             ->forRandomCity()
             ->forRandomUser()
             ->hasProducts(Product::factory()->count(10)->hasFlavors(2))
+            ->create();
+
+        Review::factory()
+            ->count(20)
+            ->foRandomUser()
+            ->foRandomShop()
             ->create();
     }
 }
