@@ -11,10 +11,11 @@ use Illuminate\Support\Carbon;
 /**
  * @property int $id
  * @property string $name
+ * @property string $slug
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-class Flavor extends Model
+class City extends Model
 {
     use HasFactory;
 

@@ -1,0 +1,1362 @@
+[
+    {
+        "name": "Warszawa",
+        "slug": "warszawa"
+    },
+    {
+        "name": "Kraków",
+        "slug": "krakow"
+    },
+    {
+        "name": "Łódź",
+        "slug": "lodz"
+    },
+    {
+        "name": "Wrocław",
+        "slug": "wroclaw"
+    },
+    {
+        "name": "Poznań",
+        "slug": "poznan"
+    },
+    {
+        "name": "Gdańsk",
+        "slug": "gdansk"
+    },
+    {
+        "name": "Szczecin",
+        "slug": "szczecin"
+    },
+    {
+        "name": "Bydgoszcz",
+        "slug": "bydgoszcz"
+    },
+    {
+        "name": "Lublin",
+        "slug": "lublin"
+    },
+    {
+        "name": "Białystok",
+        "slug": "bialystok"
+    },
+    {
+        "name": "Katowice",
+        "slug": "katowice"
+    },
+    {
+        "name": "Gdynia",
+        "slug": "gdynia"
+    },
+    {
+        "name": "Częstochowa",
+        "slug": "czestochowa"
+    },
+    {
+        "name": "Radom",
+        "slug": "radom"
+    },
+    {
+        "name": "Toruń",
+        "slug": "torun"
+    },
+    {
+        "name": "Sosnowiec",
+        "slug": "sosnowiec"
+    },
+    {
+        "name": "Kielce",
+        "slug": "kielce"
+    },
+    {
+        "name": "Rzeszów",
+        "slug": "rzeszow"
+    },
+    {
+        "name": "Gliwice",
+        "slug": "gliwice"
+    },
+    {
+        "name": "Zabrze",
+        "slug": "zabrze"
+    },
+    {
+        "name": "Olsztyn",
+        "slug": "olsztyn"
+    },
+    {
+        "name": "Bielsko-Biała",
+        "slug": "bielsko-biala"
+    },
+    {
+        "name": "Bytom",
+        "slug": "bytom"
+    },
+    {
+        "name": "Rybnik",
+        "slug": "rybnik"
+    },
+    {
+        "name": "Ruda Śląska",
+        "slug": "ruda-slaska"
+    },
+    {
+        "name": "Zielona Góra",
+        "slug": "zielona-gora"
+    },
+    {
+        "name": "Tychy",
+        "slug": "tychy"
+    },
+    {
+        "name": "Opole",
+        "slug": "opole"
+    },
+    {
+        "name": "Gorzów Wielkopolski",
+        "slug": "gorzow-wielkopolski"
+    },
+    {
+        "name": "Dąbrowa Górnicza",
+        "slug": "dabrowa-gornicza"
+    },
+    {
+        "name": "Płock",
+        "slug": "plock"
+    },
+    {
+        "name": "Elbląg",
+        "slug": "elblag"
+    },
+    {
+        "name": "Wałbrzych",
+        "slug": "walbrzych"
+    },
+    {
+        "name": "Chorzów",
+        "slug": "chorzow"
+    },
+    {
+        "name": "Tarnów",
+        "slug": "tarnow"
+    },
+    {
+        "name": "Koszalin",
+        "slug": "koszalin"
+    },
+    {
+        "name": "Kalisz",
+        "slug": "kalisz"
+    },
+    {
+        "name": "Legnica",
+        "slug": "legnica"
+    },
+    {
+        "name": "Włocławek",
+        "slug": "wloclawek"
+    },
+    {
+        "name": "Grudziądz",
+        "slug": "grudziadz"
+    },
+    {
+        "name": "Jaworzno",
+        "slug": "jaworzno"
+    },
+    {
+        "name": "Jelenia Góra",
+        "slug": "jelenia-gora"
+    },
+    {
+        "name": "Siedlce",
+        "slug": "siedlce"
+    },
+    {
+        "name": "Mysłowice",
+        "slug": "myslowice"
+    },
+    {
+        "name": "Piotrków Trybunalski",
+        "slug": "piotrkow-trybunalski"
+    },
+    {
+        "name": "Konin",
+        "slug": "konin"
+    },
+    {
+        "name": "Inowrocław",
+        "slug": "inowroclaw"
+    },
+    {
+        "name": "Ostrowiec Świętokrzyski",
+        "slug": "ostrowiec-swietokrzyski"
+    },
+    {
+        "name": "Suwałki",
+        "slug": "suwalki"
+    },
+    {
+        "name": "Gniezno",
+        "slug": "gniezno"
+    },
+    {
+        "name": "Przemyśl",
+        "slug": "przemysl"
+    },
+    {
+        "name": "Głogów",
+        "slug": "glogow"
+    },
+    {
+        "name": "Zamość",
+        "slug": "zamosc"
+    },
+    {
+        "name": "Pabianice",
+        "slug": "pabianice"
+    },
+    {
+        "name": "Leszno",
+        "slug": "leszno"
+    },
+    {
+        "name": "Łomża",
+        "slug": "lomza"
+    },
+    {
+        "name": "Ełk",
+        "slug": "elk"
+    },
+    {
+        "name": "Tarnowskie Góry",
+        "slug": "tarnowskie-gory"
+    },
+    {
+        "name": "Chełm",
+        "slug": "chelm"
+    },
+    {
+        "name": "Pruszków",
+        "slug": "pruszkow"
+    },
+    {
+        "name": "Mielec",
+        "slug": "mielec"
+    },
+    {
+        "name": "Bełchatów",
+        "slug": "belchatow"
+    },
+    {
+        "name": "Świdnica",
+        "slug": "swidnica"
+    },
+    {
+        "name": "Biała Podlaska",
+        "slug": "biala-podlaska"
+    },
+    {
+        "name": "Będzin",
+        "slug": "bedzin"
+    },
+    {
+        "name": "Legionowo",
+        "slug": "legionowo"
+    },
+    {
+        "name": "Ostrołęka",
+        "slug": "ostroleka"
+    },
+    {
+        "name": "Puławy",
+        "slug": "pulawy"
+    },
+    {
+        "name": "Starogard Gdański",
+        "slug": "starogard-gdanski"
+    },
+    {
+        "name": "Skierniewice",
+        "slug": "skierniewice"
+    },
+    {
+        "name": "Tarnobrzeg",
+        "slug": "tarnobrzeg"
+    },
+    {
+        "name": "Starachowice",
+        "slug": "starachowice"
+    },
+    {
+        "name": "Kutno",
+        "slug": "kutno"
+    },
+    {
+        "name": "Rumia",
+        "slug": "rumia"
+    },
+    {
+        "name": "Nysa",
+        "slug": "nysa"
+    },
+    {
+        "name": "Kołobrzeg",
+        "slug": "kolobrzeg"
+    },
+    {
+        "name": "Dębica",
+        "slug": "debica"
+    },
+    {
+        "name": "Ciechanów",
+        "slug": "ciechanow"
+    },
+    {
+        "name": "Świdnik",
+        "slug": "swidnik"
+    },
+    {
+        "name": "Otwock",
+        "slug": "otwock"
+    },
+    {
+        "name": "Sieradz",
+        "slug": "sieradz"
+    },
+    {
+        "name": "Mikołów",
+        "slug": "mikolow"
+    },
+    {
+        "name": "Świnoujście",
+        "slug": "swinoujscie"
+    },
+    {
+        "name": "Kwidzyn",
+        "slug": "kwidzyn"
+    },
+    {
+        "name": "Chojnice",
+        "slug": "chojnice"
+    },
+    {
+        "name": "Nowa Sól",
+        "slug": "nowa-sol"
+    },
+    {
+        "name": "Bolesławiec",
+        "slug": "boleslawiec"
+    },
+    {
+        "name": "Oświęcim",
+        "slug": "oswiecim"
+    },
+    {
+        "name": "Malbork",
+        "slug": "malbork"
+    },
+    {
+        "name": "Żary",
+        "slug": "zary"
+    },
+    {
+        "name": "Jarosław",
+        "slug": "jaroslaw"
+    },
+    {
+        "name": "Sopot",
+        "slug": "sopot"
+    },
+    {
+        "name": "Chrzanów",
+        "slug": "chrzanow"
+    },
+    {
+        "name": "Brzeg",
+        "slug": "brzeg"
+    },
+    {
+        "name": "Jasło",
+        "slug": "jaslo"
+    },
+    {
+        "name": "Lębork",
+        "slug": "lebork"
+    },
+    {
+        "name": "Cieszyn",
+        "slug": "cieszyn"
+    },
+    {
+        "name": "Czeladź",
+        "slug": "czeladz"
+    },
+    {
+        "name": "Kraśnik",
+        "slug": "krasnik"
+    },
+    {
+        "name": "Nowy Targ",
+        "slug": "nowy-targ"
+    },
+    {
+        "name": "Iława",
+        "slug": "ilawa"
+    },
+    {
+        "name": "Police",
+        "slug": "police"
+    },
+    {
+        "name": "Dzierżoniów",
+        "slug": "dzierzoniow"
+    },
+    {
+        "name": "Grodzisk Mazowiecki",
+        "slug": "grodzisk-mazowiecki"
+    },
+    {
+        "name": "Zgorzelec",
+        "slug": "zgorzelec"
+    },
+    {
+        "name": "Łowicz",
+        "slug": "lowicz"
+    },
+    {
+        "name": "Łuków",
+        "slug": "lukow"
+    },
+    {
+        "name": "Bielsk Podlaski",
+        "slug": "bielsk-podlaski"
+    },
+    {
+        "name": "Bielawa",
+        "slug": "bielawa"
+    },
+    {
+        "name": "Augustów",
+        "slug": "augustow"
+    },
+    {
+        "name": "Bochnia",
+        "slug": "bochnia"
+    },
+    {
+        "name": "Mława",
+        "slug": "mlawa"
+    },
+    {
+        "name": "Giżycko",
+        "slug": "gizycko"
+    },
+    {
+        "name": "Brodnica",
+        "slug": "brodnica"
+    },
+    {
+        "name": "Krotoszyn",
+        "slug": "krotoszyn"
+    },
+    {
+        "name": "Kętrzyn",
+        "slug": "ketrzyn"
+    },
+    {
+        "name": "Zakopane",
+        "slug": "zakopane"
+    },
+    {
+        "name": "Gorlice",
+        "slug": "gorlice"
+    },
+    {
+        "name": "Biłgoraj",
+        "slug": "bilgoraj"
+    },
+    {
+        "name": "Kłodzko",
+        "slug": "klodzko"
+    },
+    {
+        "name": "Luboń",
+        "slug": "lubon"
+    },
+    {
+        "name": "Brzozów",
+        "slug": "brzozow"
+    },
+    {
+        "name": "Wałcz",
+        "slug": "walcz"
+    },
+    {
+        "name": "Kluczbork",
+        "slug": "kluczbork"
+    },
+    {
+        "name": "Jarocin",
+        "slug": "jarocin"
+    },
+    {
+        "name": "Świecie",
+        "slug": "swiecie"
+    },
+    {
+        "name": "Wągrowiec",
+        "slug": "wagrowiec"
+    },
+    {
+        "name": "Skawina",
+        "slug": "skawina"
+    },
+    {
+        "name": "Sandomierz",
+        "slug": "sandomierz"
+    },
+    {
+        "name": "Białogard",
+        "slug": "bialogard"
+    },
+    {
+        "name": "Kościan",
+        "slug": "koscian"
+    },
+    {
+        "name": "Kościerzyna",
+        "slug": "koscierzyna"
+    },
+    {
+        "name": "Szczytno",
+        "slug": "szczytno"
+    },
+    {
+        "name": "Ostrów Mazowiecka",
+        "slug": "ostrow-mazowiecka"
+    },
+    {
+        "name": "Jawor",
+        "slug": "jawor"
+    },
+    {
+        "name": "Goleniów",
+        "slug": "goleniow"
+    },
+    {
+        "name": "Lubartów",
+        "slug": "lubartow"
+    },
+    {
+        "name": "Świedbodzin",
+        "slug": "swiedbodzin"
+    },
+    {
+        "name": "Grajewo",
+        "slug": "grajewo"
+    },
+    {
+        "name": "Wieliczka",
+        "slug": "wieliczka"
+    },
+    {
+        "name": "Łęczna",
+        "slug": "leczna"
+    },
+    {
+        "name": "Opoczno",
+        "slug": "opoczno"
+    },
+    {
+        "name": "Koło",
+        "slug": "kolo"
+    },
+    {
+        "name": "Działdowo",
+        "slug": "dzialdowo"
+    },
+    {
+        "name": "Prudnik",
+        "slug": "prudnik"
+    },
+    {
+        "name": "Gryfino",
+        "slug": "gryfino"
+    },
+    {
+        "name": "Hajnówka",
+        "slug": "hajnowka"
+    },
+    {
+        "name": "Chełmno",
+        "slug": "chelmno"
+    },
+    {
+        "name": "Pleszew",
+        "slug": "pleszew"
+    },
+    {
+        "name": "Gostyń",
+        "slug": "gostyn"
+    },
+    {
+        "name": "Nakło nad Notecią",
+        "slug": "naklo-nad-notecia"
+    },
+    {
+        "name": "Pułtusk",
+        "slug": "pultusk"
+    },
+    {
+        "name": "Chodzież",
+        "slug": "chodziez"
+    },
+    {
+        "name": "Krasnystaw",
+        "slug": "krasnystaw"
+    },
+    {
+        "name": "Gostynin",
+        "slug": "gostynin"
+    },
+    {
+        "name": "Międzyrzecz",
+        "slug": "miedzyrzecz"
+    },
+    {
+        "name": "Łask",
+        "slug": "lask"
+    },
+    {
+        "name": "Oborniki",
+        "slug": "oborniki"
+    },
+    {
+        "name": "Rawa Mazowiecka",
+        "slug": "rawa-mazowiecka"
+    },
+    {
+        "name": "Łańcut",
+        "slug": "lancut"
+    },
+    {
+        "name": "Garwolin",
+        "slug": "garwolin"
+    },
+    {
+        "name": "Kozienice",
+        "slug": "kozienice"
+    },
+    {
+        "name": "Braniewo",
+        "slug": "braniewo"
+    },
+    {
+        "name": "Bytów",
+        "slug": "bytow"
+    },
+    {
+        "name": "Brzesko",
+        "slug": "brzesko"
+    },
+    {
+        "name": "Grójec",
+        "slug": "grojec"
+    },
+    {
+        "name": "Krapkowice",
+        "slug": "krapkowice"
+    },
+    {
+        "name": "Rypin",
+        "slug": "rypin"
+    },
+    {
+        "name": "Gryfice",
+        "slug": "gryfice"
+    },
+    {
+        "name": "Olecko",
+        "slug": "olecko"
+    },
+    {
+        "name": "Złotoryja",
+        "slug": "zlotoryja"
+    },
+    {
+        "name": "Przeworsk",
+        "slug": "przeworsk"
+    },
+    {
+        "name": "Łęczyca",
+        "slug": "leczyca"
+    },
+    {
+        "name": "Jędrzejów",
+        "slug": "jedrzejow"
+    },
+    {
+        "name": "Siemiatycze",
+        "slug": "siemiatycze"
+    },
+    {
+        "name": "Choszczno",
+        "slug": "choszczno"
+    },
+    {
+        "name": "Limanowa",
+        "slug": "limanowa"
+    },
+    {
+        "name": "Grodzisk Wielkopolski",
+        "slug": "grodzisk-wielkopolski"
+    },
+    {
+        "name": "Wschowa",
+        "slug": "wschowa"
+    },
+    {
+        "name": "Nidzica",
+        "slug": "nidzica"
+    },
+    {
+        "name": "Człuchów",
+        "slug": "czluchow"
+    },
+    {
+        "name": "Gołdap",
+        "slug": "goldap"
+    },
+    {
+        "name": "Głubczyce",
+        "slug": "glubczyce"
+    },
+    {
+        "name": "Wolsztyn",
+        "slug": "wolsztyn"
+    },
+    {
+        "name": "Trzebnica",
+        "slug": "trzebnica"
+    },
+    {
+        "name": "Włodawa",
+        "slug": "wlodawa"
+    },
+    {
+        "name": "Golub-Dobrzyń",
+        "slug": "golub-dobrzyn"
+    },
+    {
+        "name": "Brzeziny",
+        "slug": "brzeziny"
+    },
+    {
+        "name": "Lubaczów",
+        "slug": "lubaczow"
+    },
+    {
+        "name": "Aleksandrów Kujawski",
+        "slug": "aleksandrow-kujawski"
+    },
+    {
+        "name": "Węgorzewo",
+        "slug": "wegorzewo"
+    },
+    {
+        "name": "Janów Lubelski",
+        "slug": "janow-lubelski"
+    },
+    {
+        "name": "Góra",
+        "slug": "gora"
+    },
+    {
+        "name": "Drawsko Pomorskie",
+        "slug": "drawsko-pomorskie"
+    },
+    {
+        "name": "Krosno Odrzańskie",
+        "slug": "krosno-odrzanskie"
+    },
+    {
+        "name": "Nowe Miasto Lubawskie",
+        "slug": "nowe-miasto-lubawskie"
+    },
+    {
+        "name": "Kolno",
+        "slug": "kolno"
+    },
+    {
+        "name": "Lwówek Śląski",
+        "slug": "lwowek-slaski"
+    },
+    {
+        "name": "Kamień Pomorski",
+        "slug": "kamien-pomorski"
+    },
+    {
+        "name": "Kolbuszowa",
+        "slug": "kolbuszowa"
+    },
+    {
+        "name": "Kazimierza Wielka",
+        "slug": "kazimierza-wielka"
+    },
+    {
+        "name": "Hrubieszów",
+        "slug": "hrubieszow"
+    },
+    {
+        "name": "Świętochłowice",
+        "slug": "swietochlowice"
+    },
+    {
+        "name": "Lubin",
+        "slug": "lubin"
+    },
+    {
+        "name": "Mińsk Mazowiecki",
+        "slug": "minsk-mazowiecki"
+    },
+    {
+        "name": "Żyrardów",
+        "slug": "zyrardow"
+    },
+    {
+        "name": "Tczew",
+        "slug": "tczew"
+    },
+    {
+        "name": "Ostróda",
+        "slug": "ostroda"
+    },
+    {
+        "name": "Siemianowice Śląskie",
+        "slug": "siemianowice-slaskie"
+    },
+    {
+        "name": "Puck",
+        "slug": "puck"
+    },
+    {
+        "name": "Wejherowo",
+        "slug": "wejherowo"
+    },
+    {
+        "name": "Sokołów Podlaski",
+        "slug": "sokolow-podlaski"
+    },
+    {
+        "name": "Płońsk",
+        "slug": "plonsk"
+    },
+    {
+        "name": "Wąbrzeźno",
+        "slug": "wabrzezno"
+    },
+    {
+        "name": "Mrągowo",
+        "slug": "mragowo"
+    },
+    {
+        "name": "Pruszcz Gdański",
+        "slug": "pruszcz-gdanski"
+    },
+    {
+        "name": "Zduńska Wola",
+        "slug": "zdunska-wola"
+    },
+    {
+        "name": "Oleśnica",
+        "slug": "olesnica"
+    },
+    {
+        "name": "Ostrów Wielkopolski",
+        "slug": "ostrow-wielkopolski"
+    },
+    {
+        "name": "Turek",
+        "slug": "turek"
+    },
+    {
+        "name": "Złotów",
+        "slug": "zlotow"
+    },
+    {
+        "name": "Tomaszów Mazowiecki",
+        "slug": "tomaszow-mazowiecki"
+    },
+    {
+        "name": "Tomaszów Lubelski",
+        "slug": "tomaszow-lubelski"
+    },
+    {
+        "name": "Nowy Sącz",
+        "slug": "nowy-sacz"
+    },
+    {
+        "name": "Sochaczew",
+        "slug": "sochaczew"
+    },
+    {
+        "name": "Piekary Śląskie",
+        "slug": "piekary-slaskie"
+    },
+    {
+        "name": "Stargard Szczeciński",
+        "slug": "stargard-szczecinski"
+    },
+    {
+        "name": "Lipno",
+        "slug": "lipno"
+    },
+    {
+        "name": "Zgierz",
+        "slug": "zgierz"
+    },
+    {
+        "name": "Lubań",
+        "slug": "luban"
+    },
+    {
+        "name": "Nowy Dwór Mazowiecki",
+        "slug": "nowy-dwor-mazowiecki"
+    },
+    {
+        "name": "Zambrów",
+        "slug": "zambrow"
+    },
+    {
+        "name": "Szczecinek",
+        "slug": "szczecinek"
+    },
+    {
+        "name": "Sejny",
+        "slug": "sejny"
+    },
+    {
+        "name": "Oława",
+        "slug": "olawa"
+    },
+    {
+        "name": "Czarnków",
+        "slug": "czarnkow"
+    },
+    {
+        "name": "Lidzbark Warmiński",
+        "slug": "lidzbark-warminski"
+    },
+    {
+        "name": "Kamienna Góra",
+        "slug": "kamienna-gora"
+    },
+    {
+        "name": "Słupca",
+        "slug": "slupca"
+    },
+    {
+        "name": "Jastrzębie-Zdrój",
+        "slug": "jastrzebie-zdroj"
+    },
+    {
+        "name": "Krosno",
+        "slug": "krosno"
+    },
+    {
+        "name": "Skarżysko-Kamienna",
+        "slug": "skarzysko-kamienna"
+    },
+    {
+        "name": "Sanok",
+        "slug": "sanok"
+    },
+    {
+        "name": "Radziejów",
+        "slug": "radziejow"
+    },
+    {
+        "name": "Bartoszyce",
+        "slug": "bartoszyce"
+    },
+    {
+        "name": "Maków Mazowiecki",
+        "slug": "makow-mazowiecki"
+    },
+    {
+        "name": "Sierpc",
+        "slug": "sierpc"
+    },
+    {
+        "name": "Wodzisław Śląski",
+        "slug": "wodzislaw-slaski"
+    },
+    {
+        "name": "Żory",
+        "slug": "zory"
+    },
+    {
+        "name": "Radomsko",
+        "slug": "radomsko"
+    },
+    {
+        "name": "Wołomin",
+        "slug": "wolomin"
+    },
+    {
+        "name": "Radzyń Podlaski",
+        "slug": "radzyn-podlaski"
+    },
+    {
+        "name": "Sławno",
+        "slug": "slawno"
+    },
+    {
+        "name": "Stalowa Wola",
+        "slug": "stalowa-wola"
+    },
+    {
+        "name": "Racibórz",
+        "slug": "raciborz"
+    },
+    {
+        "name": "Piła",
+        "slug": "pila"
+    },
+    {
+        "name": "Żywiec",
+        "slug": "zywiec"
+    },
+    {
+        "name": "Świdwin",
+        "slug": "swidwin"
+    },
+    {
+        "name": "Przasnysz",
+        "slug": "przasnysz"
+    },
+    {
+        "name": "Żagań",
+        "slug": "zagan"
+    },
+    {
+        "name": "Piaseczno",
+        "slug": "piaseczno"
+    },
+    {
+        "name": "Wysokie Mazowieckie",
+        "slug": "wysokie-mazowieckie"
+    },
+    {
+        "name": "Leżajsk",
+        "slug": "lezajsk"
+    },
+    {
+        "name": "Zawiercie",
+        "slug": "zawiercie"
+    },
+    {
+        "name": "Kędzierzyn-Koźle",
+        "slug": "kedzierzyn-kozle"
+    },
+    {
+        "name": "Bieruń",
+        "slug": "bierun"
+    },
+    {
+        "name": "Myszków",
+        "slug": "myszkow"
+    },
+    {
+        "name": "Słupsk",
+        "slug": "slupsk"
+    },
+    {
+        "name": "Węgrów",
+        "slug": "wegrow"
+    },
+    {
+        "name": "Wadowice",
+        "slug": "wadowice"
+    },
+    {
+        "name": "Olkusz",
+        "slug": "olkusz"
+    },
+    {
+        "name": "Sucha Beskidzka",
+        "slug": "sucha-beskidzka"
+    },
+    {
+        "name": "Ożarów Mazowiecki",
+        "slug": "ozarow-mazowiecki"
+    },
+    {
+        "name": "Pszczyna",
+        "slug": "pszczyna"
+    },
+    {
+        "name": "Myślenice",
+        "slug": "myslenice"
+    },
+    {
+        "name": "Lubliniec",
+        "slug": "lubliniec"
+    },
+    {
+        "name": "Wieluń",
+        "slug": "wielun"
+    },
+    {
+        "name": "Wyszków",
+        "slug": "wyszkow"
+    },
+    {
+        "name": "Rawicz",
+        "slug": "rawicz"
+    },
+    {
+        "name": "Września",
+        "slug": "wrzesnia"
+    },
+    {
+        "name": "Śrem",
+        "slug": "srem"
+    },
+    {
+        "name": "Kępno",
+        "slug": "kepno"
+    },
+    {
+        "name": "Ropczyce",
+        "slug": "ropczyce"
+    },
+    {
+        "name": "Dąbrowa Tarnowska",
+        "slug": "dabrowa-tarnowska"
+    },
+    {
+        "name": "Polkowice",
+        "slug": "polkowice"
+    },
+    {
+        "name": "Kartuzy",
+        "slug": "kartuzy"
+    },
+    {
+        "name": "Szamotuły",
+        "slug": "szamotuly"
+    },
+    {
+        "name": "Proszowice",
+        "slug": "proszowice"
+    },
+    {
+        "name": "Kłobuck",
+        "slug": "klobuck"
+    },
+    {
+        "name": "Nisko",
+        "slug": "nisko"
+    },
+    {
+        "name": "Ząbkowice Śląskie",
+        "slug": "zabkowice-slaskie"
+    },
+    {
+        "name": "Strzelce Opolskie",
+        "slug": "strzelce-opolskie"
+    },
+    {
+        "name": "Strzyżów",
+        "slug": "strzyzow"
+    },
+    {
+        "name": "Środa Wielkopolska",
+        "slug": "sroda-wielkopolska"
+    },
+    {
+        "name": "Wieruszów",
+        "slug": "wieruszow"
+    },
+    {
+        "name": "Końskie",
+        "slug": "konskie"
+    },
+    {
+        "name": "Busko-Zdrój",
+        "slug": "busko-zdroj"
+    },
+    {
+        "name": "Nowy Tomyśl",
+        "slug": "nowy-tomysl"
+    },
+    {
+        "name": "Białobrzegi",
+        "slug": "bialobrzegi"
+    },
+    {
+        "name": "Miechów",
+        "slug": "miechow"
+    },
+    {
+        "name": "Ryki",
+        "slug": "ryki"
+    },
+    {
+        "name": "Ostrzeszów",
+        "slug": "ostrzeszow"
+    },
+    {
+        "name": "Strzelin",
+        "slug": "strzelin"
+    },
+    {
+        "name": "Szydłowiec",
+        "slug": "szydlowiec"
+    },
+    {
+        "name": "Staszów",
+        "slug": "staszow"
+    },
+    {
+        "name": "Żuromin",
+        "slug": "zuromin"
+    },
+    {
+        "name": "Opatów",
+        "slug": "opatow"
+    },
+    {
+        "name": "Sztum",
+        "slug": "sztum"
+    },
+    {
+        "name": "Słubice",
+        "slug": "slubice"
+    },
+    {
+        "name": "Lesko",
+        "slug": "lesko"
+    },
+    {
+        "name": "Żnin",
+        "slug": "znin"
+    },
+    {
+        "name": "Pajęczno",
+        "slug": "pajeczno"
+    },
+    {
+        "name": "Parczew",
+        "slug": "parczew"
+    },
+    {
+        "name": "Mogilno",
+        "slug": "mogilno"
+    },
+    {
+        "name": "Pińczów",
+        "slug": "pinczow"
+    },
+    {
+        "name": "Pyrzyce",
+        "slug": "pyrzyce"
+    },
+    {
+        "name": "Mońki",
+        "slug": "monki"
+    },
+    {
+        "name": "Środa Śląska",
+        "slug": "sroda-slaska"
+    },
+    {
+        "name": "Opole Lubelskie",
+        "slug": "opole-lubelskie"
+    },
+    {
+        "name": "Łosice",
+        "slug": "losice"
+    },
+    {
+        "name": "Zwoleń",
+        "slug": "zwolen"
+    },
+    {
+        "name": "Namysłów",
+        "slug": "namyslow"
+    },
+    {
+        "name": "Nowy Dwór Gdański",
+        "slug": "nowy-dwor-gdanski"
+    },
+    {
+        "name": "Tuchola",
+        "slug": "tuchola"
+    },
+    {
+        "name": "Lipsko",
+        "slug": "lipsko"
+    },
+    {
+        "name": "Sokółka",
+        "slug": "sokolka"
+    },
+    {
+        "name": "Włoszczowa",
+        "slug": "wloszczowa"
+    },
+    {
+        "name": "Olesno",
+        "slug": "olesno"
+    },
+    {
+        "name": "Sępólno Krajeńskie",
+        "slug": "sepolno-krajenskie"
+    },
+    {
+        "name": "Poddębice",
+        "slug": "poddebice"
+    },
+    {
+        "name": "Przysucha",
+        "slug": "przysucha"
+    },
+    {
+        "name": "Wołów",
+        "slug": "wolow"
+    },
+    {
+        "name": "Myślibórz",
+        "slug": "mysliborz"
+    },
+    {
+        "name": "Łobez",
+        "slug": "lobez"
+    },
+    {
+        "name": "Milicz",
+        "slug": "milicz"
+    },
+    {
+        "name": "Strzelce Krajeńskie",
+        "slug": "strzelce-krajenskie"
+    },
+    {
+        "name": "Pisz",
+        "slug": "pisz"
+    },
+    {
+        "name": "Sulęcin",
+        "slug": "sulecin"
+    },
+    {
+        "name": "Ustrzyki Dolne",
+        "slug": "ustrzyki-dolne"
+    },
+    {
+        "name": "Międzychód",
+        "slug": "miedzychod"
+    }
+]

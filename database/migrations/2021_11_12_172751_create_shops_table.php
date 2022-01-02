@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,7 +15,7 @@ return new class() extends Migration {
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->string("name");
-            $table->string("city");
+            $table->foreignIdFor(City::class)->constrained()->cascadeOnDelete();
             $table->string("address");
             $table->text("description");
             $table->float("lat", 6, 3)->nullable();

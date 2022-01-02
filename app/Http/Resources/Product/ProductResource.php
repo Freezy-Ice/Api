@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Resources\Product;
 
 use App\Http\Resources\CategoryResource;
-use App\Http\Resources\FlavorResource;
+use App\Http\Resources\Flavor\FlavorResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource

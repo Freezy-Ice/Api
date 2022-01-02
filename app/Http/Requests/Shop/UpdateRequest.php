@@ -22,7 +22,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             "name" => ["required", "min:3", "max:50"],
-            "city" => ["required"],
+            "city" => ["required", "exists:cities,id"],
             "address" => ["required", "min:3", "max:50"],
             "description" => ["required", "min:3", "max:500"],
             "coords" => ["required", "array"],
@@ -40,7 +40,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             "name" => $this->get("name"),
-            "city" => $this->get("city"),
+            "city_id" => $this->get("city"),
             "address" => $this->get("address"),
             "description" => $this->get("description"),
             "lat" => $this->input("coords.lat"),
