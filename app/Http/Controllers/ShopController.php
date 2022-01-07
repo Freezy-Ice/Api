@@ -15,6 +15,7 @@ class ShopController extends Controller
     public function search(SearchRequest $request): JsonResource
     {
         $shops = Shop::query()
+            ->with(["favorites", "openingHours", "city"])
             ->filter($request->getFilterData())
             ->sort(...$request->getSortData())
             ->paginate($request->query("perPage"));

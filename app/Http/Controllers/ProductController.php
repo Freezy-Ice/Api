@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\Product\ProductCollection;
 use App\Http\Resources\Product\ProductResource;
 use App\Models\Product;
 use App\Models\Shop;
@@ -14,7 +13,11 @@ class ProductController extends Controller
 {
     public function index(Shop $shop): JsonResource
     {
-        return new ProductCollection($shop->products);
+        $products = $shop->products()
+            ->with(["flavors", "category"])
+            ->get();
+
+        return ProductResource::collection($products);
     }
 
     public function show(Shop $shop, Product $product): JsonResource

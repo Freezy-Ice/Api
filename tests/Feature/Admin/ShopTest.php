@@ -17,7 +17,7 @@ class ShopTest extends TestCase
 
     public function testAdminCanListUnacceptedShops(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
 
         $this->createShops(11, [
             "accepted" => false,
@@ -35,7 +35,7 @@ class ShopTest extends TestCase
 
     public function testAdminCanSeeUnnaceptedShop(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $shop = $this->createShop([
             "accepted" => false,
         ]);
@@ -50,7 +50,7 @@ class ShopTest extends TestCase
 
     public function testAdminCanAcceptShop(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $shop = $this->createShop([
             "accepted" => false,
         ]);

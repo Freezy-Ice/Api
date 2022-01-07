@@ -18,7 +18,9 @@ class ShopController extends Controller
 {
     public function index(Request $request): PaginatedCollection
     {
-        $shops = Shop::query()->unaccepted()->paginate($request->query("perPage"));
+        $shops = Shop::query()
+            ->unaccepted()
+            ->paginate($request->query("perPage"));
 
         return new ShopCollection($shops);
     }

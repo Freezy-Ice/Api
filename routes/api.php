@@ -31,16 +31,30 @@ Route::prefix("auth")->group(function (): void {
     Route::post("logout", LogoutController::class)->middleware("auth:sanctum");
 });
 
-Route::middleware("auth:sanctum")->group(function (): void {
+Route::middleware("auth:sanctum")->scopeBindings()->group(function (): void {
     Route::prefix("me")->group(function (): void {
         Route::get("/", UserController::class);
         Route::get("/favorites", [FavoriteShopController::class, "index"]);
         Route::get("/reviews", [ReviewController::class, "index"]);
     });
 
+    Route::prefix("admin")->middleware("can:is-admin")->group(function (): void {
+        Route::get("shops", [AdminShopController::class, "index"]);
+        Route::get("shops/{shop}", [AdminShopController::class, "show"]);
+        Route::post("shops/{shop}/accept", [AdminShopController::class, "accept"]);
+
+        Route::get("reviews", [AdminReviewController::class, "index"]);
+        Route::delete("reviews/{review}", [AdminReviewController::class, "destroy"]);
+
+        Route::apiResource("flavors", FlavorController::class);
+        Route::apiResource("categories", CategoryController::class);
+        Route::apiResource("cities", CityController::class);
+    });
+
     Route::prefix("business")->group(function (): void {
-        Route::resource("shops", BusinessShopController::class);
-        Route::resource("shops.products", BusinessProductController::class);
+        Route::apiResource("shops", BusinessShopController::class);
+        Route::apiResource("shops.products", BusinessProductController::class)
+            ->middleware("can:manageProducts,shop");
     });
 
     Route::get("shops", [ShopController::class, "search"]);
@@ -52,19 +66,6 @@ Route::middleware("auth:sanctum")->group(function (): void {
     Route::delete("shops/{shop}/like", [FavoriteShopController::class, "dislike"]);
     Route::post("shops/{shop}/review", [ReviewController::class, "store"]);
     Route::delete("shops/{shop}/review", [ReviewController::class, "destroy"]);
-});
-
-Route::prefix("admin")->group(function (): void {
-    Route::get("shops", [AdminShopController::class, "index"]);
-    Route::get("shops/{shop}", [AdminShopController::class, "show"]);
-    Route::post("shops/{shop}/accept", [AdminShopController::class, "accept"]);
-
-    Route::get("reviews", [AdminReviewController::class, "index"]);
-    Route::delete("reviews/{review}", [AdminReviewController::class, "destroy"]);
-
-    Route::apiResource("flavors", FlavorController::class);
-    Route::apiResource("categories", CategoryController::class);
-    Route::apiResource("cities", CityController::class);
 });
 
 Route::get("cities", [DictionaryController::class, "cities"]);

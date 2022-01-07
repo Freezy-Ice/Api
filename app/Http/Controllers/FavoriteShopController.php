@@ -14,7 +14,10 @@ class FavoriteShopController extends Controller
 {
     public function index(Request $request): JsonResource
     {
-        $shops = $request->user()->favoriteShops()->paginate($request->query("perPage"));
+        $shops = $request->user()
+            ->favoriteShops()
+            ->with(["openingHours", "city"])
+            ->paginate($request->query("perPage"));
 
         return new ShopCollection($shops);
     }

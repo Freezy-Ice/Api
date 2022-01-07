@@ -16,6 +16,7 @@ class UserFactory extends Factory
             "email" => $this->faker->unique()->safeEmail(),
             "password" => Hash::make("secret123"),
             "company_account" => false,
+            "admin_account" => false,
         ];
     }
 
@@ -24,6 +25,15 @@ class UserFactory extends Factory
         return $this->state(
             fn() => [
                 "company_account" => true,
+            ],
+        );
+    }
+
+    public function adminAccount(): Factory
+    {
+        return $this->state(
+            fn() => [
+                "admin_account" => true,
             ],
         );
     }

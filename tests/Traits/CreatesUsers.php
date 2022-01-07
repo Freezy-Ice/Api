@@ -9,6 +9,18 @@ use Illuminate\Support\Facades\Hash;
 
 trait CreatesUsers
 {
+    public function createAdmin(string $email = "admin@example.com"): User
+    {
+        /** @var User $user */
+        $user = User::factory([
+            "email" => $email,
+        ])
+            ->adminAccount()
+            ->create();
+
+        return $user;
+    }
+
     public function createUser(string $email = "test@example.com", string $password = "secret123"): User
     {
         /** @var User $user */

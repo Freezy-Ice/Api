@@ -17,7 +17,11 @@ class ProductController extends Controller
 {
     public function index(Shop $shop): JsonResource
     {
-        return new ProductCollection($shop->products);
+        $products = $shop->products()
+            ->with(["flavors", "category"])
+            ->get();
+
+        return new ProductCollection($products);
     }
 
     public function store(ProductRequest $request, Shop $shop): JsonResource
@@ -28,12 +32,12 @@ class ProductController extends Controller
         return new ProductResource($product);
     }
 
-    public function show(Product $product): JsonResource
+    public function show(Shop $shop, Product $product): JsonResource
     {
         return new ProductResource($product);
     }
 
-    public function update(ProductRequest $request, Product $product): JsonResource
+    public function update(ProductRequest $request, Shop $shop, Product $product): JsonResource
     {
         $product->update($request->getData());
 
@@ -43,7 +47,7 @@ class ProductController extends Controller
         return new ProductResource($product);
     }
 
-    public function destroy(Product $product): Response
+    public function destroy(Shop $shop, Product $product): Response
     {
         $product->delete();
 

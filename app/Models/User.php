@@ -19,6 +19,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $email
  * @property string $password
  * @property bool $company_account
+ * @property bool $admin_account
  * @property Collection $shops
  * @property Collection $favoriteShops
  * @property Collection $reviews
@@ -38,6 +39,7 @@ class User extends Authenticatable
 
     protected $casts = [
         "company_account" => "bool",
+        "admin_account" => "bool",
     ];
 
     public function shops(): HasMany
@@ -58,5 +60,15 @@ class User extends Authenticatable
     public function scopeCompanyAccounts(Builder $query): Builder
     {
         return $query->where("company_account", true);
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->admin_account;
+    }
+
+    public function isBusiness(): bool
+    {
+        return $this->company_account;
     }
 }

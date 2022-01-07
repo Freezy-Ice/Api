@@ -17,7 +17,7 @@ class CategoryTest extends TestCase
 
     public function testAdminCanListCategories(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $this->createCategories(10);
 
         $this->actingAs($user)
@@ -28,7 +28,7 @@ class CategoryTest extends TestCase
 
     public function testAdminCanSeeCategory(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $category = $this->createCategory();
 
         $this->actingAs($user)
@@ -41,7 +41,7 @@ class CategoryTest extends TestCase
 
     public function testAdminCanCreateCategory(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
 
         $this->actingAs($user)
             ->post("/admin/categories", [
@@ -56,7 +56,7 @@ class CategoryTest extends TestCase
 
     public function testAdminCanUpdateCategory(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $category = $this->createCategory();
 
         $this->actingAs($user)
@@ -73,7 +73,7 @@ class CategoryTest extends TestCase
 
     public function testAdminCanDeleteCategory(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $category = $this->createCategory();
 
         $this->assertModelExists($category);
