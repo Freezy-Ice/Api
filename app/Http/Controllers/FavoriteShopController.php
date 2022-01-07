@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\Shop\Admin\ShopCollection; // TODO: create user resource
+use App\Http\Resources\Shop\ShopCollection;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

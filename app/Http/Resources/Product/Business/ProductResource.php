@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Resources\Product;
+namespace App\Http\Resources\Product\Business;
 
 use App\Http\Resources\Category\CategoryResource;
 use App\Http\Resources\Flavor\FlavorResource;

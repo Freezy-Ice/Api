@@ -15,7 +15,7 @@ class CityTest extends TestCase
     use CreatesUsers;
     use CreatesCities;
 
-    public function testAdminCanListCategories(): void
+    public function testAdminCanListCities(): void
     {
         $user = $this->createUser();
         $this->createCites(10);
@@ -39,7 +39,7 @@ class CityTest extends TestCase
             ]);
     }
 
-    public function testAdminCanCreateClassroom(): void
+    public function testAdminCanCreateCity(): void
     {
         $user = $this->createUser();
 

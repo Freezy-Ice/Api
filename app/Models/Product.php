@@ -9,17 +9,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
 
 /**
  * @property int $id
- * @property int $shop_id
  * @property string $name
  * @property string $description
- * @property int $category_id
  * @property int $kcal
  * @property int $price
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property Shop $shop
+ * @property Category $category
+ * @property Collection $flavors
  */
 class Product extends Model
 {

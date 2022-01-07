@@ -15,6 +15,8 @@ use Illuminate\Support\Carbon;
  * @property string $comment
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property User $user
+ * @property Shop $shop
  */
 class Review extends Model
 {

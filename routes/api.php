@@ -11,11 +11,14 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\UserController;
-use App\Http\Controllers\Business\ProductController;
+use App\Http\Controllers\Business\ProductController as BusinessProductController;
 use App\Http\Controllers\Business\ShopController as BusinessShopController;
 use App\Http\Controllers\DictionaryController;
 use App\Http\Controllers\FavoriteShopController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ShopController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get("/", fn(): array => [
@@ -37,14 +40,13 @@ Route::middleware("auth:sanctum")->group(function (): void {
 
     Route::prefix("business")->group(function (): void {
         Route::resource("shops", BusinessShopController::class);
-
-        Route::post("/shops/{shop}/products", [ProductController::class, "store"]);
-        Route::put("/products/{product}", [ProductController::class, "update"]);
-        Route::delete("/products/{product}", [ProductController::class, "destroy"]);
+        Route::resource("shops.products", BusinessProductController::class);
     });
 
-    Route::get("/shops/{shop}/products", [ProductController::class, "index"]);
-    Route::get("/products/{product}", [ProductController::class, "show"]);
+    Route::get("shops", [ShopController::class, "search"]);
+    Route::get("shops/{shop}", [ShopController::class, "show"]);
+    Route::get("shops/{shop}/products", [ProductController::class, "index"]);
+    Route::get("shops/{shop}/products/{product}", [ProductController::class, "show"]);
 
     Route::post("shops/{shop}/like", [FavoriteShopController::class, "like"]);
     Route::delete("shops/{shop}/like", [FavoriteShopController::class, "dislike"]);

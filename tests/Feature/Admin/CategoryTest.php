@@ -39,7 +39,7 @@ class CategoryTest extends TestCase
             ]);
     }
 
-    public function testAdminCanCreateClassroom(): void
+    public function testAdminCanCreateCategory(): void
     {
         $user = $this->createUser();
 

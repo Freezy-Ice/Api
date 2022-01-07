@@ -39,7 +39,7 @@ class FlavorTest extends TestCase
             ]);
     }
 
-    public function testAdminCanCreateClassroom(): void
+    public function testAdminCanCreateFlavor(): void
     {
         $user = $this->createUser();
 

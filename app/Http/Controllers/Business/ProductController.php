@@ -6,8 +6,8 @@ namespace App\Http\Controllers\Business;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
-use App\Http\Resources\Product\ProductCollection;
-use App\Http\Resources\Product\ProductResource;
+use App\Http\Resources\Product\Business\ProductCollection;
+use App\Http\Resources\Product\Business\ProductResource;
 use App\Models\Product;
 use App\Models\Shop;
 use Illuminate\Http\Resources\Json\JsonResource;
