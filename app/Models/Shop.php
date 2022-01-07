@@ -107,10 +107,13 @@ class Shop extends Model
     {
         $dayOfWeek = DayOfWeek::fromCarbon($now);
 
-        return $query->whereRelation("openingHours", fn(Builder $query) => $query->where("day", $dayOfWeek->value)
+        return $query->whereRelation(
+            "openingHours",
+            fn(Builder $query) => $query->where("day", $dayOfWeek->value)
             ->where("open", true)
             ->whereTime("from", "<=", $now)
-            ->whereTime("to", ">", $now), );
+            ->whereTime("to", ">", $now),
+        );
     }
 
     public function scopeByCategory(Builder $query, array $values): Builder
