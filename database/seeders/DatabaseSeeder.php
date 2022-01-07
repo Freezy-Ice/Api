@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-use App\Models\Product;
 use App\Models\Review;
 use App\Models\Shop;
 use App\Models\User;
@@ -16,6 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(CitySeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(FlavorSeeder::class);
 
         User::factory()
             ->count(10)
@@ -26,21 +26,17 @@ class DatabaseSeeder extends Seeder
             ->count(40)
             ->create();
 
-        Category::factory()
-            ->count(10)
-            ->create();
-
         Shop::factory()
             ->count(10)
             ->forRandomCity()
             ->forRandomCompanyUser()
-            ->hasProducts(Product::factory()->count(10)->hasFlavors(2))
+            ->hasProducts(10)
             ->create();
 
         Review::factory()
             ->count(20)
             ->forRandomUser()
-            ->foRandomShop()
+            ->forRandomShop()
             ->create();
     }
 }

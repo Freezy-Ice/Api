@@ -20,6 +20,8 @@ return new class() extends Migration {
             $table->text("description");
             $table->float("lat", 6, 3)->nullable();
             $table->float("lng", 6, 3)->nullable();
+            $table->float("rating")->default(0);
+            $table->float("avg_price")->default(0);
             $table->boolean("accepted")->default(false);
             $table->timestamps();
         });

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Resources\Review;
 
-use App\Http\Resources\Shop\Admin\ShopResource; // TODO user resource
+use App\Http\Resources\Shop\ShopResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ReviewResource extends JsonResource
