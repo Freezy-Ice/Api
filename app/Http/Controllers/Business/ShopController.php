@@ -17,9 +17,17 @@ use Illuminate\Http\Response;
 
 class ShopController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Shop::class, "shop");
+    }
+
     public function index(Request $request): PaginatedCollection
     {
-        $shops = $request->user()->shops()->paginate($request->query("perPage"));
+        $shops = $request->user()
+            ->shops()
+            ->with(["openingHours", "city"])
+            ->paginate($request->query("perPage"));
 
         return new ShopCollection($shops);
     }

@@ -19,7 +19,7 @@ class ReviewTest extends TestCase
 
     public function testAdminCanListAllReviews(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $this->createReviews(10);
 
         $this->assertDatabaseCount("reviews", 10);
@@ -32,7 +32,7 @@ class ReviewTest extends TestCase
 
     public function testAdminCanDeleteReview(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $shop = $this->createShop();
 
         $this->assertDatabaseCount("reviews", 0);
@@ -56,7 +56,7 @@ class ReviewTest extends TestCase
 
     public function testUserCanDeleteReview(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $review = $this->createReview();
 
         $this->assertDatabaseCount("reviews", 1);

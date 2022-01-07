@@ -17,6 +17,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(FlavorSeeder::class);
 
+        User::factory([
+            "email" => "admin@example.com",
+        ])
+            ->adminAccount()
+            ->create();
+
         User::factory()
             ->count(10)
             ->companyAccount()

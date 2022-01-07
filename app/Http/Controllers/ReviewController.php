@@ -16,7 +16,10 @@ class ReviewController extends Controller
 {
     public function index(Request $request): JsonResource
     {
-        $reviews = $request->user()->reviews()->paginate($request->query("perPage"));
+        $reviews = $request->user()
+            ->reviews()
+            ->with(["user", "shop"])
+            ->paginate($request->query("perPage"));
 
         return new ReviewCollection($reviews);
     }

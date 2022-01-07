@@ -17,7 +17,7 @@ class FlavorTest extends TestCase
 
     public function testAdminCanListFlavors(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $this->createFlavors(10);
 
         $this->actingAs($user)
@@ -28,7 +28,7 @@ class FlavorTest extends TestCase
 
     public function testAdminCanSeeFlavor(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $flavor = $this->createFlavor();
 
         $this->actingAs($user)
@@ -41,7 +41,7 @@ class FlavorTest extends TestCase
 
     public function testAdminCanCreateFlavor(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
 
         $this->actingAs($user)
             ->post("/admin/flavors", [
@@ -56,7 +56,7 @@ class FlavorTest extends TestCase
 
     public function testAdminCanUpdateFlavor(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $flavor = $this->createFlavor();
 
         $this->actingAs($user)
@@ -73,7 +73,7 @@ class FlavorTest extends TestCase
 
     public function testAdminCanDeleteFlavor(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $flavor = $this->createFlavor();
 
         $this->assertModelExists($flavor);

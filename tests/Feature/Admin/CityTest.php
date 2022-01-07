@@ -17,7 +17,7 @@ class CityTest extends TestCase
 
     public function testAdminCanListCities(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $this->createCites(10);
 
         $this->actingAs($user)
@@ -28,7 +28,7 @@ class CityTest extends TestCase
 
     public function testAdminCanSeeCity(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $city = $this->createCity();
 
         $this->actingAs($user)
@@ -41,7 +41,7 @@ class CityTest extends TestCase
 
     public function testAdminCanCreateCity(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
 
         $this->actingAs($user)
             ->post("/admin/cities", [
@@ -57,7 +57,7 @@ class CityTest extends TestCase
 
     public function testAdminCanUpdateCity(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $city = $this->createCity([]);
 
         $this->actingAs($user)
@@ -75,7 +75,7 @@ class CityTest extends TestCase
 
     public function testAdminCanDeleteCity(): void
     {
-        $user = $this->createUser();
+        $user = $this->createAdmin();
         $city = $this->createCity();
 
         $this->assertModelExists($city);
