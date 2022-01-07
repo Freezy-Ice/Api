@@ -110,9 +110,9 @@ class Shop extends Model
         return $query->whereRelation(
             "openingHours",
             fn(Builder $query) => $query->where("day", $dayOfWeek->value)
-            ->where("open", true)
-            ->whereTime("from", "<=", $now)
-            ->whereTime("to", ">", $now),
+                ->where("open", true)
+                ->whereTime("from", "<=", $now)
+                ->whereTime("to", ">", $now),
         );
     }
 
