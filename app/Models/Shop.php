@@ -33,6 +33,7 @@ use Illuminate\Support\Collection;
  * @property Collection $openingHours
  * @property Collection $products
  * @property Collection $reviews
+ * @property Collection $favorites
  */
 class Shop extends Model
 {
@@ -84,6 +85,11 @@ class Shop extends Model
         $this->accepted = true;
 
         $this->save();
+    }
+
+    public function scopeAccepted(Builder $query): Builder
+    {
+        return $query->where("accepted", true);
     }
 
     public function scopeUnaccepted(Builder $query): Builder
