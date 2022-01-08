@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Requests\Shop;
 
 use App\Enums\DayOfWeek;
+use App\Models\Image;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
 
@@ -33,6 +34,7 @@ class UpdateRequest extends FormRequest
             "openingHours.*.from" => ["required", "date_format:G:i"],
             "openingHours.*.to" => ["required", "date_format:G:i"],
             "openingHours.*.open" => ["required", "boolean"],
+            "image" => ["nullable", "exists:images,id"],
         ];
     }
 
@@ -51,5 +53,13 @@ class UpdateRequest extends FormRequest
     public function getOpeningHours(): array
     {
         return $this->get("openingHours");
+    }
+
+    public function getImage(): ?Image
+    {
+        /** @var Image $image */
+        $image = Image::query()->find($this->get("image"));
+
+        return $image;
     }
 }

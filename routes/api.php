@@ -15,6 +15,7 @@ use App\Http\Controllers\Business\ProductController as BusinessProductController
 use App\Http\Controllers\Business\ShopController as BusinessShopController;
 use App\Http\Controllers\DictionaryController;
 use App\Http\Controllers\FavoriteShopController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
@@ -55,6 +56,8 @@ Route::middleware("auth:sanctum")->scopeBindings()->group(function (): void {
         Route::apiResource("shops", BusinessShopController::class);
         Route::apiResource("shops.products", BusinessProductController::class)
             ->middleware("can:manageProducts,shop");
+
+        Route::post("/images", [ImageController::class, "store"]);
     });
 
     Route::get("shops", [ShopController::class, "search"]);

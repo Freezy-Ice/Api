@@ -29,6 +29,10 @@ class ProductController extends Controller
         $product = $shop->products()->create($request->getData());
         $product->flavors()->attach($request->getFlavors());
 
+        if ($request->getImage() !== null) {
+            $product->image()->save($request->getImage());
+        }
+
         return new ProductResource($product);
     }
 
@@ -43,6 +47,11 @@ class ProductController extends Controller
 
         $product->flavors()->detach();
         $product->flavors()->attach($request->getFlavors());
+
+        if ($request->getImage() !== null) {
+            $product->image()->delete();
+            $product->image()->save($request->getImage());
+        }
 
         return new ProductResource($product);
     }

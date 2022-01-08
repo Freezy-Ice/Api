@@ -25,6 +25,8 @@ class ProductObserver
     {
         $product->shop->avg_price = $this->calculateAvgPrice($product->shop);
         $product->shop->save();
+
+        $product->image()->delete();
     }
 
     public function calculateAvgPrice(Shop $shop): float

@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 
@@ -28,6 +29,7 @@ use Illuminate\Support\Collection;
  * @property Carbon $updated_at
  * @property User $owner
  * @property City $city
+ * @property Image $image
  * @property Collection $openingHours
  * @property Collection $products
  * @property Collection $reviews
@@ -70,6 +72,11 @@ class Shop extends Model
     public function favorites(): BelongsToMany
     {
         return $this->belongsToMany(User::class, "favorites");
+    }
+
+    public function image(): MorphOne
+    {
+        return $this->morphOne(Image::class, "imageable");
     }
 
     public function accept(): void
