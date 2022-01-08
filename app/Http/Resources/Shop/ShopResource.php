@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Resources\Shop;
 
 use App\Http\Resources\City\CityResource;
+use App\Http\Resources\ImageResource;
 use App\Http\Resources\OpeningHoursResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -28,6 +29,7 @@ class ShopResource extends JsonResource
             "createdAt" => $this->updated_at->format("Y-m-d H:i:s"),
             "updatedAt" => $this->updated_at->format("Y-m-d H:i:s"),
             "favorite" => $this->favorites->contains($request->user()),
+            "image" => new ImageResource($this->image),
         ];
     }
 }

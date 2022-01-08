@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Requests;
 
+use App\Models\Image;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Collection;
 
 /**
  * @property string $name
@@ -23,9 +25,10 @@ class ProductRequest extends FormRequest
             "description" => ["required", "min:3", "max:50"],
             "category" => ["required", "exists:categories,id"],
             "flavors" => ["required", "array"],
-            "flavors.*.id" => ["required", "exists:flavors,id"],
+            "flavors.*" => ["required", "exists:flavors,id"],
             "kcal" => ["required", "integer"],
             "price" => ["required", "integer"],
+            "image" => ["nullable", "exists:images,id"],
         ];
     }
 
@@ -40,12 +43,16 @@ class ProductRequest extends FormRequest
         ];
     }
 
-    public function getFlavors(): array
+    public function getFlavors(): Collection
     {
-        return array_map(function ($flavor) {
-            return [
-                "flavor_id" => $flavor["id"],
-            ];
-        }, $this->get("flavors"));
+        return $this->collect("flavors");
+    }
+
+    public function getImage(): ?Image
+    {
+        /** @var Image $image */
+        $image = Image::query()->find($this->get("image"));
+
+        return $image;
     }
 }

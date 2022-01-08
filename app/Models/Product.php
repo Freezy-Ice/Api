@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 
@@ -21,6 +22,7 @@ use Illuminate\Support\Collection;
  * @property Carbon $updated_at
  * @property Shop $shop
  * @property Category $category
+ * @property Image $image
  * @property Collection $flavors
  */
 class Product extends Model
@@ -44,5 +46,10 @@ class Product extends Model
     public function flavors(): BelongsToMany
     {
         return $this->belongsToMany(Flavor::class);
+    }
+
+    public function image(): MorphOne
+    {
+        return $this->morphOne(Image::class, "imageable");
     }
 }

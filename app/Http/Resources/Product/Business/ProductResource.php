@@ -6,6 +6,7 @@ namespace App\Http\Resources\Product\Business;
 
 use App\Http\Resources\Category\CategoryResource;
 use App\Http\Resources\Flavor\FlavorResource;
+use App\Http\Resources\ImageResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
@@ -20,6 +21,7 @@ class ProductResource extends JsonResource
             "flavors" => FlavorResource::collection($this->flavors),
             "kcal" => $this->kcal,
             "price" => $this->price,
+            "image" => new ImageResource($this->image),
         ];
     }
 }

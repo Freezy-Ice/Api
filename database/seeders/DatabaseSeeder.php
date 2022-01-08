@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use App\Models\Review;
 use App\Models\Shop;
 use App\Models\User;
@@ -36,7 +37,8 @@ class DatabaseSeeder extends Seeder
             ->count(10)
             ->forRandomCity()
             ->forRandomCompanyUser()
-            ->hasProducts(10)
+            ->hasImage()
+            ->has(Product::factory()->count(10)->hasImage())
             ->create();
 
         Review::factory()
