@@ -1,0 +1,14 @@
+{
+    "Hello!": "Cześć!",
+    "Shop \":name\" has been updated": "Lodziarnia \":name\" zaktualizowała swoje dane",
+    "Shop \":name\": added new product": "Lodziarnia \":name\" dodała nowy produkt",
+    "Shop \":name\": updated their product": "Lodziarnia \":name\" zaktualizowała swój produkt",
+    "Shop \":name\": deleted their product": "Lodziarnia \":name\" usunęła swój produkt",
+    "Product \":name\" has been created": "Produkt \":name\" został dodany",
+    "Product \":name\" has been updated": "Produkt \":name\" został zaktualizowany",
+    "Product \":name\" has been deleted": "Produkt \":name\" został usunięty",
+    "Go to shop": "Przejdź do lodziarni",
+    "Thank you for using our application!": "Dziękujemy za korzystanie z naszej aplikacji!",
+    "Regards": "Pozdrawiamy",
+    "If you're having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": "Jeśli masz problem z kliknięciem przycisku \":actionText\", skopiuj i wklej link do przeglądarki:"
+}

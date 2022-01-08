@@ -20,6 +20,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $password
  * @property bool $company_account
  * @property bool $admin_account
+ * @property bool $allow_notifications
  * @property Collection $shops
  * @property Collection $favoriteShops
  * @property Collection $reviews
@@ -40,6 +41,7 @@ class User extends Authenticatable
     protected $casts = [
         "company_account" => "bool",
         "admin_account" => "bool",
+        "allow_notifications" => "bool",
     ];
 
     public function shops(): HasMany
@@ -70,5 +72,27 @@ class User extends Authenticatable
     public function isBusiness(): bool
     {
         return $this->company_account;
+    }
+
+    public function allowsNotify(): bool
+    {
+        return $this->allow_notifications;
+    }
+
+    public function enableNotifications(): void
+    {
+        $this->allow_notifications = true;
+        $this->save();
+    }
+
+    public function disableNotifications(): void
+    {
+        $this->allow_notifications = false;
+        $this->save();
+    }
+
+    public function scopeNotifiables(Builder $query): Builder
+    {
+        return $query->where("allow_notifications", true);
     }
 }

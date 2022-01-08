@@ -15,6 +15,7 @@ class ShopController extends Controller
     public function search(SearchRequest $request): JsonResource
     {
         $shops = Shop::query()
+            ->accepted()
             ->with(["favorites", "openingHours", "city"])
             ->filter($request->getFilterData())
             ->sort(...$request->getSortData())

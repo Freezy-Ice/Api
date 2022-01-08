@@ -16,6 +16,7 @@ class UserResource extends JsonResource
             "email" => $this->email,
             "adminAccount" => $this->admin_account,
             "companyAccount" => $this->company_account,
+            "allowNotifications" => $this->allow_notifications,
         ];
     }
 }

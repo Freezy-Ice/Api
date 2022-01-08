@@ -10,7 +10,6 @@ use App\Http\Controllers\Admin\ShopController as AdminShopController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Business\ProductController as BusinessProductController;
 use App\Http\Controllers\Business\ShopController as BusinessShopController;
 use App\Http\Controllers\DictionaryController;
@@ -19,7 +18,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/", fn(): array => [
@@ -34,7 +33,9 @@ Route::prefix("auth")->group(function (): void {
 
 Route::middleware("auth:sanctum")->scopeBindings()->group(function (): void {
     Route::prefix("me")->group(function (): void {
-        Route::get("/", UserController::class);
+        Route::get("/", [UserController::class, "user"]);
+        Route::post("/allow-notifications", [UserController::class, "enableNotifications"]);
+        Route::delete("/allow-notifications", [UserController::class, "disableNotifications"]);
         Route::get("/favorites", [FavoriteShopController::class, "index"]);
         Route::get("/reviews", [ReviewController::class, "index"]);
     });

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Business;
 
+use App\Events\ShopUpdated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shop\StoreRequest;
 use App\Http\Requests\Shop\UpdateRequest;
@@ -53,6 +54,8 @@ class ShopController extends Controller
 
         $shop->openingHours()->delete();
         $shop->openingHours()->createMany($request->getOpeningHours());
+
+        event(new ShopUpdated($shop));
 
         return new ShopResource($shop);
     }
