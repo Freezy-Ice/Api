@@ -9,14 +9,6 @@ use App\Models\Image;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
 
-/**
- * @property string $name
- * @property string $city
- * @property string $address
- * @property string $description
- * @property array $coords
- * @property array $openingHours
- */
 class UpdateRequest extends FormRequest
 {
     public function rules(): array
@@ -31,8 +23,8 @@ class UpdateRequest extends FormRequest
             "coords.lng" => ["required", "numeric"],
             "openingHours" => ["required", "array"],
             "openingHours.*.day" => ["required", new Enum(DayOfWeek::class)],
-            "openingHours.*.from" => ["required", "date_format:G:i"],
-            "openingHours.*.to" => ["required", "date_format:G:i"],
+            "openingHours.*.from" => ["required", "date_format:H:i"],
+            "openingHours.*.to" => ["required", "date_format:H:i"],
             "openingHours.*.open" => ["required", "boolean"],
             "image" => ["nullable", "exists:images,id"],
         ];

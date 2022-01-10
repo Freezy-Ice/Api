@@ -61,16 +61,17 @@ Route::middleware("auth:sanctum")->scopeBindings()->group(function (): void {
         Route::post("/images", [ImageController::class, "store"]);
     });
 
-    Route::get("shops", [ShopController::class, "search"]);
-    Route::get("shops/{shop}", [ShopController::class, "show"]);
-    Route::get("shops/{shop}/products", [ProductController::class, "index"]);
-    Route::get("shops/{shop}/products/{product}", [ProductController::class, "show"]);
-
     Route::post("shops/{shop}/like", [FavoriteShopController::class, "like"]);
     Route::delete("shops/{shop}/like", [FavoriteShopController::class, "dislike"]);
     Route::post("shops/{shop}/review", [ReviewController::class, "store"]);
     Route::delete("shops/{shop}/review", [ReviewController::class, "destroy"]);
 });
+
+Route::get("shops", [ShopController::class, "search"]);
+Route::get("shops/{shop}", [ShopController::class, "show"]);
+Route::get("shops/{shop}/products", [ProductController::class, "index"]);
+Route::get("shops/{shop}/products/{product}", [ProductController::class, "show"]);
+Route::get("shops/{shop}/reviews", [ReviewController::class, "indexForShop"]);
 
 Route::get("cities", [DictionaryController::class, "cities"]);
 Route::get("flavors", [DictionaryController::class, "flavors"]);

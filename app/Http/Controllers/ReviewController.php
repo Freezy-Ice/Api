@@ -24,6 +24,15 @@ class ReviewController extends Controller
         return new ReviewCollection($reviews);
     }
 
+    public function indexForShop(Request $request, Shop $shop): JsonResource
+    {
+        $reviews = $shop->reviews()
+            ->with(["user", "shop"])
+            ->paginate($request->query("perPage"));
+
+        return new ReviewCollection($reviews);
+    }
+
     public function store(ReviewRequest $request, Shop $shop): JsonResource
     {
         abort_if($shop->reviews->contains($request->user()), 403);
