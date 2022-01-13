@@ -53,7 +53,7 @@ class ProductTest extends TestCase
                 "description" => "Description",
                 "category" => $category->id,
                 "flavors" => [
-                    "id" => $flavor->id,
+                    $flavor->id,
                 ],
                 "kcal" => "123",
                 "price" => "123",
@@ -109,7 +109,7 @@ class ProductTest extends TestCase
                 "description" => "Description",
                 "category" => $category->id,
                 "flavors" => [
-                    "id" => $flavor->id,
+                    $flavor->id,
                 ],
                 "kcal" => "123",
                 "price" => "123",
