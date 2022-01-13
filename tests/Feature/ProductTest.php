@@ -29,7 +29,7 @@ class ProductTest extends TestCase
         $shop = $this->createShop();
         $this->createCategory();
         $this->createFlavor();
-        $this->createProductsFor($shop,3);
+        $this->createProductsFor($shop, 3);
         $this->createProducts(10);
 
         $this->actingAs($user)
@@ -72,7 +72,7 @@ class ProductTest extends TestCase
         $this->assertDatabaseHas("flavor_product", [
             "flavor_id" => $flavor->id,
             "product_id" => 1,
-            ]);
+        ]);
     }
 
     public function testUserCanSeeProduct(): void
@@ -87,7 +87,7 @@ class ProductTest extends TestCase
             ->get("/shops/{$shop->id}/products/{$product->id}")
             ->assertSuccessful()
             ->assertJsonFragment([
-                "id" => $product->id
+                "id" => $product->id,
             ]);
     }
 

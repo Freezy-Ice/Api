@@ -6,10 +6,10 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use Tests\Traits\CreatesImages;
-use Tests\Traits\CreatesUsers;
-use Tests\Traits\CreatesShops;
 use Tests\Traits\CreatesCities;
+use Tests\Traits\CreatesImages;
+use Tests\Traits\CreatesShops;
+use Tests\Traits\CreatesUsers;
 
 class ShopTest extends TestCase
 {
@@ -28,7 +28,7 @@ class ShopTest extends TestCase
         $this->assertDatabaseCount("shops", 13);
 
         $this->actingAs($user)
-            ->get('/business/shops')
+            ->get("/business/shops")
             ->assertSuccessful()
             ->assertJsonCount(3, "data");
     }
@@ -70,7 +70,7 @@ class ShopTest extends TestCase
             ->get("/business/shops/{$shop->id}")
             ->assertSuccessful()
             ->assertJsonFragment([
-                "id" => $shop->id
+                "id" => $shop->id,
             ]);
     }
 
@@ -97,7 +97,7 @@ class ShopTest extends TestCase
                         "day" => "monday",
                         "from" => "08:00",
                         "to" => "16:00",
-                        "open" => true
+                        "open" => true,
                     ],
                 ],
             ])
