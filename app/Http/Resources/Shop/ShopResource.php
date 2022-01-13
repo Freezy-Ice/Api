@@ -28,7 +28,7 @@ class ShopResource extends JsonResource
             "openingHours" => OpeningHoursResource::collection($this->openingHours),
             "createdAt" => $this->updated_at->format("Y-m-d H:i:s"),
             "updatedAt" => $this->updated_at->format("Y-m-d H:i:s"),
-            "favorite" => $request->user() ? $this->favorites->contains($request->user()) : null,
+            "favorite" => auth("sanctum")->user() ? $this->favorites->contains(auth("sanctum")->user()) : null,
             "image" => new ImageResource($this->image),
         ];
     }
