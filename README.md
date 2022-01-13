@@ -55,5 +55,5 @@ dcr php ./vendor/bin/ecs check
 ### Tests
 Run tests:
 ```shel script
-dcr php artisan test
+dcr php composer test
 ```
