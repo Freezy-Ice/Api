@@ -31,4 +31,17 @@ trait CreatesUsers
 
         return $user;
     }
+
+    public function createCompanyUser(string $email = "test@example.com", string $password = "secret123"): User
+    {
+        /** @var User $user */
+        $user = User::factory([
+            "email" => $email,
+            "password" => Hash::make($password),
+        ])
+            ->companyAccount()
+            ->create();
+
+        return $user;
+    }
 }

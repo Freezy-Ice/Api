@@ -47,6 +47,15 @@ class ShopFactory extends Factory
         );
     }
 
+    public function forCompanyUser(User $user): Factory
+    {
+        return $this->state(
+            fn() => [
+                "user_id" => $user->id,
+            ],
+        );
+    }
+
     public function forRandomCity(): Factory
     {
         return $this->state(

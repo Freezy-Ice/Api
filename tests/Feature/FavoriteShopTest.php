@@ -32,7 +32,7 @@ class FavoriteShopTest extends TestCase
             ->assertJsonCount(1, "data");
     }
 
-    public function testUserCanlikeShop(): void
+    public function testUserCanLikeShop(): void
     {
         $user = $this->createUser();
         $shop = $this->createShop();
