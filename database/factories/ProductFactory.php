@@ -15,6 +15,7 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
+            "shop_id" => Shop::factory(),
             "name" => $this->faker->word(),
             "description" => $this->faker->paragraph(),
             "category_id" => Category::query()->inRandomOrder()->first()->id,
